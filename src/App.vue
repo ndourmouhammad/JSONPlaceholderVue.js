@@ -1,26 +1,66 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app" class="container">
+    <nav class="nav">
+      <router-link to="/" class="link">Liste des articles</router-link>
+      <span class="separator">|</span>
+      <router-link to="/add" class="button contrast">Ajouter un article</router-link>
+    </nav>
+    <router-view></router-view>
+  </div>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+<style scoped>
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
 }
-</script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.link {
+  text-decoration: none;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.separator {
+  margin: 0 1rem;
+}
+
+.button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.button.contrast {
+  background-color: #007bff;
+  color: white;
+}
+
+.button.contrast:hover {
+  background-color: #0056b3;
 }
 </style>
+
+
+<script>
+export default {
+  name: 'App',
+};
+</script>
+
+
